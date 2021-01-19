@@ -1,0 +1,148 @@
+.window{
+    padding: 0 1.75rem 6.125rem 1.75rem;
+    max-width: 87.5rem;
+    margin: 0 auto;
+    @include breakpoint-up(large){
+        display: grid;
+        column-gap: 9.375rem;
+        min-height: 100vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(auto, 40vh) auto;
+        grid-template-areas: 
+        "logo ratings"
+        "opinions opinions";
+    }
+}
+
+.advert{
+    @include breakpoint-up(large){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-area: logo;
+    }
+}
+
+.logo{
+    text-align: center;
+    padding-top: 5rem ;
+    margin-bottom: 1.875rem;
+    &__paragraph{
+        color: $veryDarkMagenta;
+        font-weight: bold;
+        font-size: 1.75rem;
+    }
+}
+
+.description{
+    text-align: center;
+    margin: 0 auto 2.9375rem auto;
+    max-width: 25rem;
+    &__text{
+        color: $darkGrayishMagenta;
+        font-size: $bodyCopy;
+        font-weight: 500;
+    }
+}
+
+.ratings{
+    @include breakpoint-up(large){
+        grid-area: ratings;
+        padding-top: 5rem;
+        margin:  0 auto;
+    }
+    &__rating{
+        background-color: $lightGrayishMagenta;
+        text-align: center;
+        font-weight: bold;
+        font-size: $bodyCopy;
+        min-width: 15rem;
+        max-width: 22rem;
+        color: $veryDarkMagenta;
+        padding: 1.125rem 0;
+        border-radius: 0.625rem;
+        &:last-child{
+            margin-bottom: 3rem;
+        }
+        @include breakpoint-down(medium){
+            margin: 0 auto 1.125rem auto;
+        }
+        @include breakpoint-up(large){
+            max-width: 27.625rem;
+            min-width: 27.625rem;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1.125rem;
+            &:nth-child(2){
+                margin-left: 3.125rem;
+            }
+            &:last-child{
+                margin-left: 6.25rem;
+            }
+        }
+    }
+
+    &__stars{
+        display: inline-block;
+        background-repeat: space;
+        height: 1rem;
+        width: 6.25rem;
+        background-image: url('/images/icon-star.svg');
+        @include breakpoint-down(medium){
+            margin-bottom: 1.125rem;  
+        }
+    }
+}
+
+.opinions{
+    @include breakpoint-up(large){
+        grid-area: opinions;
+        display: flex;
+        justify-content: center;
+        flex: 1 1 0;
+    }
+    &__opinion{
+        background-color: $veryDarkMagenta;
+        padding: 2.5rem;
+        border-radius: 0.625rem;
+        align-self: flex-start;
+        max-width: 21.875rem;
+        @include breakpoint-down(medium){
+            margin: 0 auto 1rem auto;
+        }
+        @include breakpoint-up(large){
+            height: 15.625rem;
+            &:not(:last-child){
+                margin-right: 1rem;
+            }
+        }
+        &:nth-child(2){
+            margin-top: 1rem;
+        }
+        &:last-child{
+            margin-bottom: 0;
+            margin-top: 2rem;
+        }
+    }
+    &__person{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.75rem;
+    }
+    &__picture{
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+    }
+    &__crud{
+        margin-left: 1.4375rem;
+    }
+    &__name{
+        color: $lightGrayishMagenta;
+        margin-bottom: 0.4375rem;
+    }
+    &__text{
+        color: $white;
+        font-size: 0.875rem;
+    }
+}

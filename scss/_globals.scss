@@ -1,0 +1,39 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Spartan', sans-serif;
+    background-color: $white;
+    background: url('/images/bg-pattern-top-mobile.svg') top left no-repeat, url('/images/bg-pattern-bottom-mobile.svg') bottom right no-repeat;
+    background-size: contain;
+    @include breakpoint-up(large){
+        background: url('/images/bg-pattern-top-desktop.svg') top left no-repeat, url('/images/bg-pattern-bottom-desktop.svg') bottom right no-repeat;
+        background-size: 50%;
+    }
+}
+
+h5,h6{
+    font-size: 0.875rem;
+}
+
+h6{
+    font-weight: 400;
+    color: $softPink;
+}
+
+.attribution{
+    text-align: center;
+    &__link{
+        color: $softPink;
+        font-weight: 500;
+        text-decoration: none;
+    }
+}
+
+.shadow{
+    -webkit-box-shadow: 0px 2px 11px -6px #000000; 
+    box-shadow: 0px 2px 11px -6px #000000;
+}
